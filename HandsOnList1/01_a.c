@@ -1,21 +1,35 @@
-#include <unistd.h>  // for symlink()
-#include <stdio.h>   // for printf(), perror()
+/*
+============================================================================
+Name : 01_a.c
+Author : Rohitangshu Bose
+Description : Create a soft link file using the `symlink` system call
+Date: 1st September, 2025.
+============================================================================
+*/
 
-int main(int argc, char *argv[]) {
+#include<unistd.h> // import symlink
+#include<stdio.h>  // import printf and perror
 
-    if (argc != 3) {
-        fprintf(stderr, "Usage: %s <source_file> <link_name>\n", argv[0]);
-        return 1;
-    }
+int main(int argc, char *argv[]){
 
-    const char *source = argv[1];
-    const char *target = argv[2];
+	if(argc != 3){
+		printf("Enter source and target file Name in arguement\n");
+		return 0;
+	}
+	const char *source = argv[1];
+	const char *target = argv[2];
 
-    if (symlink(source, target) == -1) {
-        perror("symlink");
-        return 1;
-    }
-
-    printf("Symbolic link created: %s -> %s\n", target, source);
-    return 0;
+	int status = symlink(source,target);
+	if(status == -1){
+		perror("symlink");
+		printf("Error while creating link\n");
+	}else{
+		printf("Link created successfully\n");
+	}
+	return 0;
 }
+
+/*
+ > ./a.out source.txt softLink.txt 
+ >  Link created successfully
+*/
