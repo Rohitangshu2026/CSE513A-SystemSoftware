@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 {
     if(argc != 2) 
 	{
-        printf("File name needed in arguement\nUsage: %s <filename>\n", argv[0]);
+        printf("File name needed in argument\nUsage: %s <filename>\n", argv[0]);
         return 0;
     }
 	
