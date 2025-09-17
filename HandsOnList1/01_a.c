@@ -2,7 +2,7 @@
 ======================================================================
 Name : 01_a.c
 Author : Rohitangshu Bose
-Description : Create a soft link file using the `symlink` system call
+Description : Create a soft link file using the symlink system call
 Date: 1st September, 2025.
 ======================================================================
 */
